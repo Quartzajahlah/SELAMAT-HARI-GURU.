@@ -1,0 +1,126 @@
+ body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom, #FFD700, #FFCC00);
+      font-family: Arial, sans-serif;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .container {
+      text-align: center;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    .title {
+      font-size: 3rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+
+    .subtitle {
+      font-size: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .open-btn {
+      font-size: 2rem;
+      color: #2575fc; /* Warna biru */
+      background-color: transparent;
+      border: 2px solid #2575fc;
+      padding: 10px 20px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .open-btn:hover {
+      background-color: #2575fc;
+      color: white;
+    }
+
+    .message {
+      display: none;
+      font-size: 1.5rem;
+      margin-top: 2rem;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    .flowers {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+
+    .rose {
+      width: 60px;
+      height: 60px;
+      background: radial-gradient(circle, #e63946, #d90429);
+      border-radius: 50%;
+      position: absolute;
+      animation: float 5s infinite ease-in-out;
+      opacity: 0;
+    }
+
+    .rose::before,
+    .rose::after {
+      content: '';
+      width: 60px;
+      height: 60px;
+      background: radial-gradient(circle, #e63946, #d90429);
+      position: absolute;
+      border-radius: 50%;
+    }
+
+    .rose::before {
+      top: -30px;
+      left: -15px;
+      transform: rotate(-45deg);
+    }
+
+    .rose::after {
+      top: -30px;
+      right: -15px;
+      transform: rotate(45deg);
+    }
+
+    .rose.left {
+      left: 10%;
+      top: 50%;
+      animation-delay: 0s;
+    }
+
+    .rose.right {
+      right: 10%;
+      top: 50%;
+      animation-delay: 2s;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(0) scale(0.8);
+        opacity: 1;
+      }
+      50% {
+        transform: translateY(-100px) scale(1);
+        opacity: 0.8;
+      }
+      100% {
+        transform: translateY(-300px) scale(1.2);
+        opacity: 0;
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
